@@ -3,6 +3,7 @@ import requests
 import json
 import time
 from flask_socketio import SocketIO, emit
+import pandas as pd
 
 st.title('Real-Time Stock Price Prediction and Signal Analysis')
 

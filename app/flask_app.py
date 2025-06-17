@@ -10,10 +10,10 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 socketio = SocketIO(app)
 
 # Load the model and scaler
-model = joblib.load('models/xgboost_model.pkl')
-scaler = joblib.load('models/scaler.pkl')
-image_model = joblib.load('models/image_model.pkl')
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+model = joblib.load(os.path.join(BASE_DIR, 'models', 'xgboost_model.pkl'))
+scaler = joblib.load(os.path.join(BASE_DIR, 'models', 'scaler.pkl'))
+image_model = joblib.load(os.path.join(BASE_DIR, 'models', 'image_model.pkl'))
 def fetch_stock_data(ticker):
     df = yf.download(ticker, period='1d')
     return df
