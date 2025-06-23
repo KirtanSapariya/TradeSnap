@@ -1,0 +1,104 @@
+{
+  "name": "Analysis",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "chart_image",
+        "asset_screening",
+        "news_sentiment",
+        "watchlist_item"
+      ],
+      "description": "Type of analysis performed"
+    },
+    "asset_symbol": {
+      "type": "string",
+      "description": "Stock or crypto symbol (e.g., AAPL, BTC)"
+    },
+    "asset_name": {
+      "type": "string",
+      "description": "Full name of the asset"
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "BUY",
+        "SELL",
+        "HOLD"
+      ],
+      "description": "Trading recommendation"
+    },
+    "entry_price": {
+      "type": "number",
+      "description": "Suggested entry price"
+    },
+    "take_profit": {
+      "type": "number",
+      "description": "Take profit target"
+    },
+    "stop_loss": {
+      "type": "number",
+      "description": "Stop loss level"
+    },
+    "risk_reward_ratio": {
+      "type": "number",
+      "description": "Risk to reward ratio"
+    },
+    "confidence_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "AI confidence percentage"
+    },
+    "chart_patterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Detected chart patterns"
+    },
+    "technical_indicators": {
+      "type": "object",
+      "properties": {
+        "rsi": {
+          "type": "number"
+        },
+        "macd": {
+          "type": "string"
+        },
+        "volume": {
+          "type": "string"
+        },
+        "sentiment": {
+          "type": "string"
+        }
+      }
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL of uploaded chart image"
+    },
+    "news_headline": {
+      "type": "string",
+      "description": "Related news headline"
+    },
+    "forecast_return": {
+      "type": "number",
+      "description": "Predicted return percentage"
+    },
+    "swing_potential": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "description": "Swing trading potential"
+    }
+  },
+  "required": [
+    "type",
+    "asset_symbol"
+  ]
+}

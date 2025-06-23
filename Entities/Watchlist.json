@@ -1,0 +1,40 @@
+{
+  "name": "Watchlist",
+  "type": "object",
+  "properties": {
+    "asset_symbol": {
+      "type": "string",
+      "description": "Stock or crypto symbol"
+    },
+    "asset_name": {
+      "type": "string",
+      "description": "Full name of the asset"
+    },
+    "asset_type": {
+      "type": "string",
+      "enum": [
+        "stock",
+        "crypto"
+      ],
+      "description": "Type of asset"
+    },
+    "target_price": {
+      "type": "number",
+      "description": "User's target price"
+    },
+    "alert_enabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether alerts are enabled"
+    },
+    "notes": {
+      "type": "string",
+      "description": "User's personal notes"
+    }
+  },
+  "required": [
+    "asset_symbol",
+    "asset_name",
+    "asset_type"
+  ]
+}
